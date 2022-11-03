@@ -14,7 +14,7 @@ import xmlRoutes from "./routes/xml.routes";
 const cors = require('cors')
 const app  = express();
 //Settings
-app.use(cors);
+app.use(cors());
 app.set("port",4000)
 
 //Middlewares
