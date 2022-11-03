@@ -1,0 +1,6 @@
+#enviroment variables
+.env
+
+#node 
+dist
+node_modulesgit
