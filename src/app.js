@@ -10,6 +10,7 @@ import prodRoutes from "./routes/product.routes";
 import whRoutes from "./routes/wh.routes";
 import salesRoutes from "./routes/sale.routes";
 import xmlRoutes from "./routes/xml.routes";
+import authRoutes from "./routes/auth.routes";
 
 const cors = require('cors')
 const app  = express();
@@ -40,5 +41,7 @@ app.use("/api/wh",whRoutes);
 app.use("/api/sales",salesRoutes);
 
 app.use("/api/xml",xmlRoutes);
+
+app.use("/api/auth",authRoutes);
 
 export default app;

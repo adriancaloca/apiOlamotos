@@ -25,9 +25,7 @@ const sendMail = async (req, res) => {
        };
        transport.sendMail(mailOptions, function(err, info) {
            if (err) {
-             console.log(err)
            } else {
-             console.log(info);
            }
        });
         const responseAPI = {msg: "success"}

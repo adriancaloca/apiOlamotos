@@ -9,7 +9,6 @@ const getSucursales= async(req,res) => {
     } catch (e) {
         res.status(500);
         res.send(`Error al consultar las sucursales`+e);
-        console.log(e);
     }
 }
 const getSucursal= async(req,res) => {
@@ -24,7 +23,6 @@ const getSucursal= async(req,res) => {
     } catch (e) {
         res.status(500);
         res.send(`Error al consultar las sucursal `+e);
-        console.log(e);
     }
 }
 
@@ -40,7 +38,6 @@ const createSucursal= async(req,res) => {
     } catch (e) {
         res.status(500);
         res.send(`Error al consultar las sucursal `+e);
-        console.log(e);
     }
 }
 const updateSucursal= async(req,res) => {
@@ -56,7 +53,6 @@ const updateSucursal= async(req,res) => {
     } catch (e) {
         res.status(500);
         res.send(`Error al consultar las sucursal `+e);
-        console.log(e);
     }
 }
 const deleteSucursal= async(req,res) => {
@@ -71,7 +67,6 @@ const deleteSucursal= async(req,res) => {
     } catch (e) {
         res.status(500);
         res.send(`Error al consultar las sucursal `+e);
-        console.log(e);
     }
 }
 

@@ -8,7 +8,6 @@ const getCategorias= async(req,res) => {
     } catch (e) {
         res.status(500);
         res.send(`Error al consultar las categorias`+e);
-        console.log(e);
     }
 }
 const getCategoria= async(req,res) => {
@@ -38,7 +37,6 @@ const createCategoria= async(req,res) => {
     } catch (e) {
         res.status(500);
         res.send(`Error al crear la categoria `+e);
-        console.log(e);
     }
 }
 const updateCategoria= async(req,res) => {
@@ -54,7 +52,6 @@ const updateCategoria= async(req,res) => {
     } catch (e) {
         res.status(500);
         res.send(`Error al actualizar la categoria `+e);
-        console.log(e);
     }
 }
 const deleteCategoria= async(req,res) => {
@@ -69,7 +66,6 @@ const deleteCategoria= async(req,res) => {
     } catch (e) {
         res.status(500);
         res.send(`Error al eliminar la categoria `+e);
-        console.log(e);
     }
 }
 

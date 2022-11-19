@@ -3,7 +3,18 @@ import { getConnection } from "../database/database";
 const getCitas = async (req, res) => {
     try {
         const connection = await getConnection()
-        const queryRes = await connection.query("Select c.id,c.nombre,c.telefono,s.nombre as sucursal,c.fecha,c.hora from citas_servicio c inner join sucursales s on s.id=c.id_sucursal")
+        const queryRes = await connection.query("Select c.id,c.nombre,c.telefono,s.nombre as sucursal,c.fecha,c.hora from citas_servicio c inner join sucursales s on s.id=c.id_sucursal where CURDATE()=c.fecha")
+        res.json(queryRes)
+    } catch (e) {
+        res.status(500);
+        res.send("Error al realizar la consulta"+e);
+    }
+};
+const getCitasRange = async (req, res) => {
+    try {
+        const {inicio,fin} = req.body;
+        const connection = await getConnection()
+        const queryRes = await connection.query(`select c.id,c.nombre,c.telefono,s.nombre as sucursal,c.fecha,c.hora from citas_servicio c inner join sucursales s on s.id=c.id_sucursal where c.fecha between DATE_SUB('${inicio}',INTERVAL 1 DAY) and DATE_ADD('${fin}',INTERVAL 1 DAY)`)
         res.json(queryRes)
     } catch (e) {
         res.status(500);
@@ -39,5 +50,6 @@ const deleteCita = async (req, res) => {
 export const methods = {
     getCitas,
     addCitas,
-    deleteCita
+    deleteCita,
+    getCitasRange
 };

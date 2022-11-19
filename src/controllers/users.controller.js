@@ -44,7 +44,6 @@ const addUser = async (req, res) => {
         res.json(responseAPI);
     } catch (e) {
         res.status(500);
-        console.log(`Error al crear el usuario ${e}`);
         res.send(`Error al crear el usuario ${e}`);
     }
 };
